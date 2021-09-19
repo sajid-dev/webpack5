@@ -1,0 +1,10 @@
+$bg-color: red;
+$bg-color-test: green;
+.hello-world-button {
+  background: $bg-color-test;
+  padding: 10px 15px;
+  color: #fff;
+}
+.hello-world-button-text {
+  color: $bg-color;
+}
