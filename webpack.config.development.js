@@ -1,6 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: "./src/index.js",
@@ -12,11 +12,10 @@ module.exports = {
   mode: "development",
   devServer: {
     static: {
-      directory: path.join(__dirname, './dist')
+      directory: path.resolve(__dirname, 'dist')
     },
     compress: true,
-    port: 9000,
-    hot: true
+    port: 4000
   },
   module: {
     rules: [
@@ -39,7 +38,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime']
+            plugins: [ '@babel/plugin-transform-modules-commonjs','@babel/plugin-transform-runtime']
           }
         }
       }
